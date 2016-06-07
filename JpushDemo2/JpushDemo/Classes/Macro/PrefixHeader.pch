@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  JpushDemo
+//
+//  Created by 王树超 on 16/5/6.
+//  Copyright © 2016年 王树超. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Headers.h"
+#import "SDCycleScrollView.h"
+//工厂类
+#import "UIFactory.h"
+#import "Manager.h"
+
+//用户
+#import "User.h"
+#import "JXWaitView.h"
+//本地存储的帮助类
+#import "FMDBManager.h"
+
+//masonry
+#import <Masonry.h>
+
+
+
+
+
+
+#endif /* PrefixHeader_pch */

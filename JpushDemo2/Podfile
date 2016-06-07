@@ -1,0 +1,5 @@
+platform:ios, '9.0'
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'FMDB'
+pod 'SDWebImage'
