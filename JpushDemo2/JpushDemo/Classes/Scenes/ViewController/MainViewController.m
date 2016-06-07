@@ -215,7 +215,9 @@
     
 }
 -(void)rightItemDidClicked{
-    RYSettingViewController *setingVC = [[RYSettingViewController alloc]init];
+    RYSettingViewController *setingVC = [[RYSettingViewController alloc]initWithNibName:@"RYSettingViewController" bundle:nil];
+    
+    
     [self.navigationController pushViewController:setingVC animated:NO];
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2409D62B1D066EEB001B248B /* RYSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2409D62A1D066EEB001B248B /* RYSettingViewController.xib */; };
 		240B5B201CE2D0490076B621 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 240B5B1D1CE2D0490076B621 /* image2.png */; };
 		240B5B211CE2D0490076B621 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 240B5B1E1CE2D0490076B621 /* image3.png */; };
 		240B5B281CE2D24C0076B621 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 240B5B271CE2D24C0076B621 /* LeftSlideViewController.m */; };
@@ -79,6 +80,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2409D62A1D066EEB001B248B /* RYSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYSettingViewController.xib; sourceTree = "<group>"; };
 		240B5B1D1CE2D0490076B621 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		240B5B1E1CE2D0490076B621 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		240B5B261CE2D24C0076B621 /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				242F26D71CDCB58900534B11 /* RYMainViewController.m */,
 				2416C3B61CE8AB3D00419FBB /* RYSettingViewController.h */,
 				2416C3B71CE8AB3D00419FBB /* RYSettingViewController.m */,
+				2409D62A1D066EEB001B248B /* RYSettingViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				243DE2BC1CE4620B00451A72 /* zanwei.png in Resources */,
 				24A652061CDADE5E00835E2B /* LaunchScreen.storyboard in Resources */,
 				24B62AA01D0129130095EE7D /* RYOpinionViewController.xib in Resources */,
+				2409D62B1D066EEB001B248B /* RYSettingViewController.xib in Resources */,
 				24A652031CDADE5E00835E2B /* Assets.xcassets in Resources */,
 				240B5B211CE2D0490076B621 /* image3.png in Resources */,
 				24A652011CDADE5E00835E2B /* Main.storyboard in Resources */,
