@@ -71,9 +71,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor redColor];
     
     //window添加背景图片
-    UIImageView *view = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"image4.png"]];
-    view.frame =  CGRectMake(0, 0, k_ScreenWith, k_ScreenHeight);
-    [self.window addSubview:view];
+    self.bgImgeView= [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"image4.png"]];
+    self.bgImgeView.frame =  CGRectMake(0, 0, k_ScreenWith, k_ScreenHeight);
+    [self.window addSubview:self.bgImgeView];
     
     [self.window makeKeyAndVisible];
     

@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import "JPUSHService.h"
-#import "AppDelegate.h"
 #import "mainView.h"
 #import "RYSettingViewController.h"
 #import "ContactFromAddressBookManager.h"

@@ -12,6 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(nonatomic,strong)UIImageView *bgImgeView;
 
 @property(nonatomic,strong)LeftSlideViewController *leftSlideVC;
 

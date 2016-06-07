@@ -12,7 +12,17 @@
 
 @interface RYSettingViewController()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
+- (IBAction)bg1ButtonDidClicked:(id)sender;
+- (IBAction)bg2ButtonDidClicked:(id)sender;
 
+- (IBAction)bg3ButtonDidClicked:(id)sender;
+
+- (IBAction)bg4ButtonDidClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *bg1Button;
+@property (weak, nonatomic) IBOutlet UIButton *bg2Button;
+
+@property (weak, nonatomic) IBOutlet UIButton *bg3Button;
+@property (weak, nonatomic) IBOutlet UIButton *bg4Button;
 @property(nonatomic,strong)UITableView *settingTableView;
 
 @end
@@ -141,4 +151,45 @@
     
 }
 
+- (IBAction)bg1ButtonDidClicked:(id)sender {
+    
+ [(UIButton *)sender setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    
+    [g_App.bgImgeView setImage:[UIImage imageNamed:@"h1.jpg"]];
+    [self setBackGroundImageForButtonExcept:1];
+}
+
+- (IBAction)bg2ButtonDidClicked:(id)sender {
+   [self.bg2Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+      [g_App.bgImgeView setImage:[UIImage imageNamed:@"h4.jpg"]];
+    [self setBackGroundImageForButtonExcept:2];
+}
+
+- (IBAction)bg3ButtonDidClicked:(id)sender {
+ [self.bg3Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+        [g_App.bgImgeView setImage:[UIImage imageNamed:@"h2.jpg"]];
+    [self setBackGroundImageForButtonExcept:3];
+}
+
+- (IBAction)bg4ButtonDidClicked:(id)sender {
+     [self.bg4Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    [g_App.bgImgeView setImage:[UIImage imageNamed:@"h3.jpg"]];
+    [self setBackGroundImageForButtonExcept:4];
+}
+
+-(void)setBackGroundImageForButtonExcept:(int)except{
+    if (except != 1) {
+           [_bg1Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+    }
+    if (except != 2) {
+        [_bg2Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+    }
+    if (except != 3) {
+        [_bg3Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+    }
+    if (except != 4) {
+        [_bg4Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+    }
+ 
+}
 @end

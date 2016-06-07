@@ -10,6 +10,7 @@
 #define PrefixHeader_pch
 
 #import "Headers.h"
+#import "AppDelegate.h"
 #import "SDCycleScrollView.h"
 //工厂类
 #import "UIFactory.h"
