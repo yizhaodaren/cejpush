@@ -10,4 +10,6 @@
 
 @interface LeftSortViewController : UIViewController
 @property(nonatomic,strong)UITableView *leftTableView;
+@property(nonatomic,strong)UIImageView *userImageView;
+@property(nonatomic,strong)UIButton *userNameButton;
 @end

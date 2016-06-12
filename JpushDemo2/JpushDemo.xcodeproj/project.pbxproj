@@ -263,6 +263,16 @@
 			path = OpenSDK1.7;
 			sourceTree = "<group>";
 		};
+		242C08E61D0D425D007E41BA /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				2416C3B61CE8AB3D00419FBB /* RYSettingViewController.h */,
+				2416C3B71CE8AB3D00419FBB /* RYSettingViewController.m */,
+				2409D62A1D066EEB001B248B /* RYSettingViewController.xib */,
+			);
+			name = "设置";
+			sourceTree = "<group>";
+		};
 		243CDEAC1CE49BDD00BD5990 /* login&&register */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,7 +422,6 @@
 				240B5B1D1CE2D0490076B621 /* image2.png */,
 				240B5B1E1CE2D0490076B621 /* image3.png */,
 				2453C53B1CF43C3C00E4E822 /* image4.png */,
-				24E45F391CDC9F33006CD401 /* Models */,
 			);
 			path = mainScroll;
 			sourceTree = "<group>";
@@ -510,7 +519,7 @@
 				24C178CB1CE9C30700010D38 /* MessageModel.m */,
 			);
 			name = Models;
-			path = ../../Models;
+			path = ../Models;
 			sourceTree = "<group>";
 		};
 		24E45F3A1CDC9F33006CD401 /* Resources */ = {
@@ -532,6 +541,7 @@
 		24E45F3B1CDC9F33006CD401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24E45F391CDC9F33006CD401 /* Models */,
 				24E45F3C1CDC9F33006CD401 /* View */,
 				24E45F3D1CDC9F33006CD401 /* ViewController */,
 			);
@@ -559,15 +569,13 @@
 		24E45F3D1CDC9F33006CD401 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				242C08E61D0D425D007E41BA /* 设置 */,
 				24B62AA11D01292A0095EE7D /* 关于我们 */,
 				24B62A9B1D0128F30095EE7D /* 意见反馈 */,
 				243CDEAD1CE49BF600BD5990 /* 抽屉 */,
 				243CDEAC1CE49BDD00BD5990 /* login&&register */,
 				242F26D61CDCB58900534B11 /* RYMainViewController.h */,
 				242F26D71CDCB58900534B11 /* RYMainViewController.m */,
-				2416C3B61CE8AB3D00419FBB /* RYSettingViewController.h */,
-				2416C3B71CE8AB3D00419FBB /* RYSettingViewController.m */,
-				2409D62A1D066EEB001B248B /* RYSettingViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

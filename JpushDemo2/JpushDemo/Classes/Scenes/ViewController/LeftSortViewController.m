@@ -12,6 +12,7 @@
 #import "RYAboutOurViewController.h"
 #import "AppDelegate.h"
 
+//布局设置
 #define cellHight 40
 
 @interface LeftSortViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -40,15 +41,48 @@
     table.delegate = self;
     table.dataSource = self;
    
-   UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 100)];
+    /**
+     *头视图
+     */
+   UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, k_ScreenWith, 100)];
     headerView.backgroundColor = [UIColor blackColor];
+    
+    //添加头像
+    self.userImageView = [[UIImageView alloc]init];
+    
+   [headerView addSubview:self.userImageView];
+    [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@10);
+        make.top.equalTo(@20);
+        make.width.equalTo(@70);
+        make.height.equalTo(@70);
+    }];
+    
+    
+    self.userImageView.image = [UIImage imageNamed:@"zanwei.png"];
+
+    self.userImageView.layer.cornerRadius = 35;
+    self.userImageView.clipsToBounds = YES;
+    //用户名称button
+    self.userNameButton = [k_factory createCommonButton:@"微信登录" target:self action:@selector(wxlogin)];
+
+    [headerView addSubview:self.userNameButton];
+    
+    [self.userNameButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.userImageView);
+        make.left.equalTo(self.userImageView.mas_right).offset(10);
+        make.height.equalTo(@40);
+    }];
+    
+    
     table.tableHeaderView = headerView;
     
+
     
-    
-    
-    
-    UIView *footerView= [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, k_ScreenHeight - 100 - 8 * cellHight)];
+    /**
+     *尾视图
+     */
+    UIView *footerView= [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, k_ScreenHeight - 100 - 5 * cellHight)];
     footerView.backgroundColor = [UIColor blackColor];
     
     table.tableFooterView = footerView;
@@ -62,6 +96,10 @@
 
     
 }
+#pragma 微信登录点击事件
+-(void)wxlogin{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,7 +108,7 @@
 
 #pragma mark TableView代理方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 8;
+    return 5;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -84,11 +122,8 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.text = @"fffff";
     cell.textLabel.textColor = [UIColor whiteColor];
-    UIImage *image =[UIImage imageNamed:@"zanwei"];
-
-    cell.imageView.image = image;
+    [self handelCell:cell withIndexPath:indexPath];
 
     return cell;
 }
@@ -102,6 +137,11 @@
             break;
         case 2:
         {
+        }
+            break;
+        case 3:
+        {
+            
             //关闭抽屉
             [g_App.leftSlideVC closeLeftView];
             
@@ -111,7 +151,7 @@
 
         }
             break;
-        case 3:
+        case 4:
         {
             //关闭抽屉
             [g_App.leftSlideVC closeLeftView];
@@ -153,6 +193,50 @@
 //    return @"haha";
 //}
 
+#pragma mark cell处理
+-(void)handelCell:(UITableViewCell *)cell withIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%lf",cell.frame.size.height);
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.textLabel.text = @"手机号:783833";
+        }
+            break;
+        case 1:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.textLabel.text = @"邮箱设置";
+       
+        }
+            break;
+        case 2:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.textLabel.text = @"分享好友";
+            
+        }
+            break;
+        case 3:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.textLabel.text = @"意见反馈";
+            
+                 }
+            break;
+        case 4:
+        {
+            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.textLabel.text = @"关于我们";
+        
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
 
 
 

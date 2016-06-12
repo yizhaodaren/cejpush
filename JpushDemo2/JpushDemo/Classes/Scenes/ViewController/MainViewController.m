@@ -70,7 +70,7 @@
     [_rootView.segment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     
  //[[FMDBManager sharedFMDBManager] insertToMessageWith:@"13133443`" And:@"nain"];
-    [[FMDBManager sharedFMDBManager]search];
+    [[FMDBManager sharedFMDBManager] search];
    NSLog(@"地方");
     
 
@@ -137,6 +137,9 @@
 //    cell.detailTextLabel.text = model.fromUserName;
 //    cell.imageView.image = [UIImage imageNamed:@"zanwei"];
    cell.messageLabel.text = @"未接未接未接未接来电未接未接来电未接未接来电未接未接";
+    [cell.backPhoneButton addTarget:self action:@selector(backPhong:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.backMessageButton addTarget:self action:@selector(backSMS:) forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -157,6 +160,7 @@
     cell.layer.cornerRadius = cell.bounds.size.width/2;
     cell.clipsToBounds = YES;
     cell.backgroundColor = [UIColor redColor];
+
     return cell;
 }
 
@@ -260,7 +264,10 @@
     
     //转换模型 刷新页面
     NSString *nameOrphoneNumber = [content substringFromIndex:3];
-    //把手机号替换成名字
+    /**
+     *<#something#>
+     */
+#pragma mark 把手机号替换成名字
     for (Contact *contact in [ContactFromAddressBookManager sharedCFABManger].ContactArray) {
         if ([nameOrphoneNumber isEqualToString:contact.ContactPhoneNumber]) {
             nameOrphoneNumber = contact.ContactName;
@@ -363,5 +370,23 @@
           self.navigationController.navigationBar. translucent = NO;
     }
 }
-
+#pragma mark 回拨电话
+-(void)backPhong:(NSIndexPath *)index{
+    
+    [g_App showAlertWithTitle:@"确定回拨" CancelTitle:@"取消" WithCancelHandel:^{
+        ;
+    } WithActionTitle:@"确定" WithActionHandel:^{
+         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://13153802083"]];
+    } WithTaget:self];
+   
+    
+}
+#pragma mark 回短息
+-(void)backSMS:(NSIndexPath *)index{
+    [g_App showAlertWithTitle:@"回消息" CancelTitle:@"取消" WithCancelHandel:^{
+        ;
+    } WithActionTitle:@"确认" WithActionHandel:^{
+       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms://1572234"]];
+    } WithTaget:self];
+}
 @end
