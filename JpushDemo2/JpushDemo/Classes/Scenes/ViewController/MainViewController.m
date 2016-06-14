@@ -14,6 +14,7 @@
 #import "Contact.h"
 #import "MessageModel.h"
 #import "RYMessageTableViewCell.h"
+#import <MJRefresh.h>
 
 #define APPKEY @"911c809b54312c314659e432"
 @interface MainViewController()<UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,SDCycleScrollViewDelegate>
@@ -48,6 +49,10 @@
     self.view = _rootView;
     _rootView.mainTableView.delegate = self;
     _rootView.mainTableView.dataSource = self;
+#pragma mark 设置刷新
+    _rootView.mainTableView.mj_header = [self RefreshMyHeader];
+    _rootView.mainTableView.mj_footer = [self MJRefreshAutoNormalFooters];
+    
     _rootView.mainCollectionView.delegate = self;
     _rootView.mainCollectionView.dataSource = self;
     //设置轮播图在创建_rootView以后
@@ -417,5 +422,61 @@
         [_rootView.mainTableView reloadData];
        
     } WithTaget:self];
+}
+
+
+#pragma mark 下拉刷新
+/**
+ *刷新相关
+ */
+#pragma mark 之定义上拉刷新
+-(MJRefreshAutoNormalFooter *)MJRefreshAutoNormalFooters{
+    
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(updateData)];
+    
+    
+    //设置颜色
+    footer.stateLabel.textColor = [UIColor whiteColor];
+   // footer.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+
+    return footer;
+}
+#pragma makr 下拉自定义文字
+-(MJRefreshNormalHeader *)RefreshMyHeader{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self updateData];
+    }];
+    //设置文字
+//    [header setTitle:@"Pull down to refresh" forState:MJRefreshStateIdle];
+//    [header setTitle:@"Release to refresh" forState:MJRefreshStatePulling];
+//    [header setTitle:@"Loading..." forState:MJRefreshStateRefreshing];
+    //设置字体
+    header.stateLabel.font = [UIFont systemFontOfSize:15];
+    header.lastUpdatedTimeLabel.font =[UIFont systemFontOfSize:14];
+    //设置颜色
+    header.stateLabel.textColor = [UIColor whiteColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+    return header;
+}
+
+- (void)updateData
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+          [self updateView];
+        
+        //结束刷新
+        [self endRefresh];
+    });
+    
+    
+}
+-(void)updateView{
+    [_rootView.mainTableView reloadData];
+}
+-(void)endRefresh{
+    [_rootView.mainTableView.mj_header endRefreshing];
+    [_rootView.mainTableView.mj_footer endRefreshing];
+    //提示加载完毕 在刷新不再加载
+    //[self.tableView.mj_footer endRefreshingWithNoMoreData];
 }
 @end
