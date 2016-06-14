@@ -22,10 +22,10 @@
 		241CF6E71CE96E5100D4251B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 241CF6E21CE96E5100D4251B /* libWeChatSDK.a */; };
 		241CF6E81CE96E5100D4251B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 241CF6E31CE96E5100D4251B /* README.txt */; };
 		24281E821CFEE65D00ECA77C /* 005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24281E7D1CFEE65D00ECA77C /* 005.jpg */; };
-		24281E831CFEE65D00ECA77C /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24281E7E1CFEE65D00ECA77C /* h1.jpg */; };
-		24281E841CFEE65D00ECA77C /* h3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24281E7F1CFEE65D00ECA77C /* h3.jpg */; };
-		24281E851CFEE65D00ECA77C /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24281E801CFEE65D00ECA77C /* h2.jpg */; };
-		24281E861CFEE65D00ECA77C /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24281E811CFEE65D00ECA77C /* h4.jpg */; };
+		242AFE8D1D0FA3680096A3DA /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242AFE891D0FA3680096A3DA /* h1.jpg */; };
+		242AFE8E1D0FA3680096A3DA /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242AFE8A1D0FA3680096A3DA /* h2.jpg */; };
+		242AFE8F1D0FA3680096A3DA /* h3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242AFE8B1D0FA3680096A3DA /* h3.jpg */; };
+		242AFE901D0FA3680096A3DA /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242AFE8C1D0FA3680096A3DA /* h4.jpg */; };
 		242F26D51CDCAE2E00534B11 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 242F26D41CDCAE2E00534B11 /* User.m */; };
 		242F26D81CDCB58900534B11 /* RYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 242F26D71CDCB58900534B11 /* RYMainViewController.m */; };
 		242F26DB1CDCB5FD00534B11 /* RYMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 242F26DA1CDCB5FD00534B11 /* RYMainView.m */; };
@@ -114,10 +114,10 @@
 		241CF6E51CE96E5100D4251B /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		241CF6E61CE96E5100D4251B /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		24281E7D1CFEE65D00ECA77C /* 005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 005.jpg; sourceTree = "<group>"; };
-		24281E7E1CFEE65D00ECA77C /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
-		24281E7F1CFEE65D00ECA77C /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
-		24281E801CFEE65D00ECA77C /* h2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h2.jpg; sourceTree = "<group>"; };
-		24281E811CFEE65D00ECA77C /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
+		242AFE891D0FA3680096A3DA /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
+		242AFE8A1D0FA3680096A3DA /* h2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h2.jpg; sourceTree = "<group>"; };
+		242AFE8B1D0FA3680096A3DA /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
+		242AFE8C1D0FA3680096A3DA /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		242F26D31CDCAE2E00534B11 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		242F26D41CDCAE2E00534B11 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		242F26D61CDCB58900534B11 /* RYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYMainViewController.h; sourceTree = "<group>"; };
@@ -546,11 +546,11 @@
 				246F3E9B1D0EAD5500BBF6C4 /* menu@3x.png */,
 				246F3E901D0EA21600BBF6C4 /* seting@2x.png */,
 				246F3E911D0EA21600BBF6C4 /* seting@3x.png */,
+				242AFE891D0FA3680096A3DA /* h1.jpg */,
+				242AFE8A1D0FA3680096A3DA /* h2.jpg */,
+				242AFE8B1D0FA3680096A3DA /* h3.jpg */,
+				242AFE8C1D0FA3680096A3DA /* h4.jpg */,
 				24281E7D1CFEE65D00ECA77C /* 005.jpg */,
-				24281E7E1CFEE65D00ECA77C /* h1.jpg */,
-				24281E7F1CFEE65D00ECA77C /* h3.jpg */,
-				24281E801CFEE65D00ECA77C /* h2.jpg */,
-				24281E811CFEE65D00ECA77C /* h4.jpg */,
 				24C178D61CE9E01400010D38 /* alertView-bg@2x.png */,
 				243DE2BB1CE4620B00451A72 /* zanwei.png */,
 				24D52C2D1CE20BAF007CDB64 /* mainScroll */,
@@ -690,15 +690,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242AFE8F1D0FA3680096A3DA /* h3.jpg in Resources */,
 				246F3E991D0EA37900BBF6C4 /* cell_delete.png in Resources */,
-				24281E851CFEE65D00ECA77C /* h2.jpg in Resources */,
 				246F3E921D0EA21600BBF6C4 /* seting@2x.png in Resources */,
-				24281E861CFEE65D00ECA77C /* h4.jpg in Resources */,
-				24281E841CFEE65D00ECA77C /* h3.jpg in Resources */,
-				24281E831CFEE65D00ECA77C /* h1.jpg in Resources */,
 				24BAE8E91CE0406300E8CF95 /* TwitterLogo_white.png in Resources */,
 				2453C53C1CF43C3C00E4E822 /* image4.png in Resources */,
 				246F3E931D0EA21600BBF6C4 /* seting@3x.png in Resources */,
+				242AFE8E1D0FA3680096A3DA /* h2.jpg in Resources */,
 				246F3E971D0EA37900BBF6C4 /* cell_telePhone.png in Resources */,
 				24B62AA61D0129520095EE7D /* RYAboutOurViewController.xib in Resources */,
 				2468D4EB1CF43B2B00280B78 /* image1.png in Resources */,
@@ -714,8 +712,10 @@
 				24B62AA01D0129130095EE7D /* RYOpinionViewController.xib in Resources */,
 				2409D62B1D066EEB001B248B /* RYSettingViewController.xib in Resources */,
 				24A652031CDADE5E00835E2B /* Assets.xcassets in Resources */,
+				242AFE901D0FA3680096A3DA /* h4.jpg in Resources */,
 				240B5B211CE2D0490076B621 /* image3.png in Resources */,
 				246F3E9D1D0EAD5500BBF6C4 /* menu@3x.png in Resources */,
+				242AFE8D1D0FA3680096A3DA /* h1.jpg in Resources */,
 				24A652011CDADE5E00835E2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
