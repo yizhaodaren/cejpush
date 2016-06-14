@@ -21,4 +21,6 @@
 //添加数据根据通知
 -(BOOL)insertToMessageWith:(NSString *)phoneNumber And:(NSString *)dateString;
 -(BOOL)search;
+//根据ID删除
+-(BOOL)deleteMessageWithID:(int)ID;
 @end

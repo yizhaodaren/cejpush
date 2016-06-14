@@ -10,6 +10,9 @@
 
 @interface Manager : NSObject
 @property(nonatomic,strong)id ManagerString;
+
+
+//将要展示的消息数组
 @property(nonatomic,strong)NSMutableArray *array;
 
 //保存极光本地消息的array

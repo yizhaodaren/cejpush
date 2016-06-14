@@ -104,10 +104,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         self.window.rootViewController = self.leftSlideVC;
     }else{
         NSLog(@"不错在用户");
-        //RYMainViewController *MainVC = [[RYMainViewController alloc]init];
-       // MainVC.view.backgroundColor = [UIColor whiteColor];
+        RYMainViewController *vc = [[RYMainViewController alloc]init];
+        vc.view.backgroundColor = [UIColor whiteColor];
         //登录界面
-        RYLoginViewController *vc = [[RYLoginViewController alloc]init];
+      //  RYLoginViewController *vc = [[RYLoginViewController alloc]init];
         self.window.rootViewController = vc;
         
         

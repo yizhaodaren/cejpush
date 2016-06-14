@@ -93,7 +93,7 @@
 -(void)createTable{
     //创建mainTableView
     self.mainTableView = [[UITableView alloc]
-    initWithFrame:CGRectMake(0, 0, k_ScreenWith, k_ScreenHeight - 64 -45) style:UITableViewStylePlain];
+    initWithFrame:CGRectMake(0, 0, k_ScreenWith, k_ScreenHeight - 64 -45) style:UITableViewStyleGrouped];
     
     
     NSArray *array = @[@"h1.jpg",@"h2.jpg"];

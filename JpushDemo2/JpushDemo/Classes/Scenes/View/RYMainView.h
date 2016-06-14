@@ -11,8 +11,8 @@
 @interface RYMainView : UIView
 
 @property(nonatomic,strong)UIButton *button;
+@property(nonatomic,strong)UIScrollView *mainScrollView;
 
-
-@property(nonnull,strong)UIScrollView *mainScrollView;
+@property(nonatomic,strong)UIPageControl *pageControl;
 
 @end

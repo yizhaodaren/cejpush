@@ -10,6 +10,7 @@
 
 @interface ContactFromAddressBookManager : NSObject
 
+//用于保存当前通讯录的所有联系人
 @property(nonatomic,strong)NSMutableArray *ContactArray;
 
 +(ContactFromAddressBookManager *)sharedCFABManger;

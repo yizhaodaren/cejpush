@@ -23,17 +23,12 @@
 @implementation MainViewController
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //获取通讯录
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-          [[ContactFromAddressBookManager sharedCFABManger] fetchContact];
-    });
-
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
     
     //注册通知JPUSH通知
     [self registerNOtification];
@@ -69,9 +64,14 @@
     
     [_rootView.segment addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     
- //[[FMDBManager sharedFMDBManager] insertToMessageWith:@"13133443`" And:@"nain"];
+    //获取通讯录
+    [[ContactFromAddressBookManager sharedCFABManger] fetchContact];
+    //添加测试数据
+    [[FMDBManager sharedFMDBManager] insertToMessageWith:@"18510919140" And:@"nain"];
+       [[FMDBManager sharedFMDBManager] insertToMessageWith:@"13206353783" And:@"nain"];
+    //获取本地数据
     [[FMDBManager sharedFMDBManager] search];
-   NSLog(@"地方");
+ 
     
 
     
@@ -130,15 +130,24 @@
 //        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"jj"];
 //    }
    cell.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
-    
+    //选中类型
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     MessageModel *model =[Manager sharedManger].array[indexPath.row];
-//    cell.textLabel.text = model.dateString;
-//    cell.detailTextLabel.text = model.fromUserName;
-//    cell.imageView.image = [UIImage imageNamed:@"zanwei"];
-   cell.messageLabel.text = @"未接未接未接未接来电未接未接来电未接未接来电未接未接";
+    
+    //如果有名字显示名字，不然就显示电话号码
+    if (model.fromUserName == NULL) {
+         cell.messageLabel.text = model.fromUserPhone;
+    }else{
+        cell.messageLabel.text = model.fromUserName;
+    }
+    cell.deleteCellButton.tag = indexPath.row + 10000;
+    cell.backMessageButton.tag = indexPath.row + 20000;
+    cell.backPhoneButton.tag = indexPath.row + 30000;
+    
     [cell.backPhoneButton addTarget:self action:@selector(backPhong:) forControlEvents:UIControlEventTouchUpInside];
     [cell.backMessageButton addTarget:self action:@selector(backSMS:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.deleteCellButton addTarget:self action:@selector(deleteMSM:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -168,7 +177,7 @@
 #pragma mark 创建item
 -(void)createNavigationItem{
    // self.navigationItem.leftBarButtonItem=
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"zanwei"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(leftItemDidClicked)];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(leftItemDidClicked)];
     
 #warning 暂时的label 应该改成全局的
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 20)];
@@ -187,7 +196,7 @@
     
     
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"zanwei"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemDidClicked)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"seting"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemDidClicked)];
 }
 -(void)settingSDCycleScrollView{
     NSArray *imagesURLStrings = @[
@@ -371,22 +380,42 @@
     }
 }
 #pragma mark 回拨电话
--(void)backPhong:(NSIndexPath *)index{
+-(void)backPhong:(UIButton *)sender{
     
     [g_App showAlertWithTitle:@"确定回拨" CancelTitle:@"取消" WithCancelHandel:^{
         ;
     } WithActionTitle:@"确定" WithActionHandel:^{
-         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://13153802083"]];
+        MessageModel *model =[Manager sharedManger].array[sender.tag - 30000];
+        NSString *telphone = [NSString stringWithFormat:@"tel://%@",model.fromUserPhone];
+         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telphone]];
     } WithTaget:self];
    
     
 }
 #pragma mark 回短息
--(void)backSMS:(NSIndexPath *)index{
+-(void)backSMS:(UIButton *)sender{
     [g_App showAlertWithTitle:@"回消息" CancelTitle:@"取消" WithCancelHandel:^{
         ;
     } WithActionTitle:@"确认" WithActionHandel:^{
-       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms://1572234"]];
+        MessageModel *model =[Manager sharedManger].array[sender.tag - 20000];
+        NSString *smsString = [NSString stringWithFormat:@"sms://%@",model.fromUserPhone];
+       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:smsString]];
+    } WithTaget:self];
+}
+#pragma mark 删除消息
+-(void)deleteMSM:(UIButton *)sender{
+    [g_App showAlertWithTitle:@"确定删除" CancelTitle:@"取消" WithCancelHandel:^{
+        ;
+    } WithActionTitle:@"确认" WithActionHandel:^{
+    NSLog(@"hyhyhyhy%ld",(long)sender.tag);
+    MessageModel *model =[Manager sharedManger].array[sender.tag - 10000];
+        //删除数据库中  model.ID 一条
+        [[FMDBManager sharedFMDBManager]deleteMessageWithID:model.ID];
+        //删除数组中一条
+        [[Manager sharedManger].array removeObject:model];
+        //然后刷新数据
+        [_rootView.mainTableView reloadData];
+       
     } WithTaget:self];
 }
 @end

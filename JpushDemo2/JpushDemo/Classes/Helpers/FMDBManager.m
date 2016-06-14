@@ -10,6 +10,7 @@
 #import <FMDatabase.h>
 #import "MessageModel.h"
 #import "Manager.h"
+#import "Contact.h"
 @implementation FMDBManager
 
 //单例
@@ -92,13 +93,24 @@
             int ID = [result intForColumn:@"id"];
             
             MessageModel *model = [[MessageModel alloc]init];
-            model.fromUserName = phoneNumber;
+            model.fromUserPhone = phoneNumber;
             model.dateString = dateString;
-            [tempArray addObject:model];
+            model.ID = ID;
+            model.fromUserName = NULL;
+#pragma mark 把手机号替换成名字
+      for (Contact *contact in [ContactFromAddressBookManager sharedCFABManger].ContactArray) {
+                if ([phoneNumber isEqualToString:contact.ContactPhoneNumber]) {
+                    
+                    model.fromUserName = contact.ContactName;
+                }
+            }
             
-            NSLog(@"%d",ID);
-            NSLog(@"%@ ",phoneNumber);
-            NSLog(@"%@ ",dateString);
+          
+            [tempArray addObject:model];
+            NSLog(@"ID是%d",ID);
+            NSLog(@"电话%@ ",phoneNumber);
+            NSLog(@"姓名%@ ",model.fromUserName);
+            NSLog(@"日期%@ ",dateString);
         }
         //关闭数据库
         [self.db close];
@@ -118,5 +130,22 @@
         
     }
     return NO;
+}
+//根据ID删除
+-(BOOL)deleteMessageWithID:(int)ID{
+    if ([self.db open]) {
+        NSString *deletString = [NSString stringWithFormat:@"delete from message where ID = %d",ID];
+        BOOL result = [self.db executeUpdate:deletString];
+          //关闭数据库
+        [self.db close];
+        
+        if (result) {
+            return YES;
+        }else{
+            return NO;
+        }
+    }else{
+    return NO ;
+    }
 }
 @end

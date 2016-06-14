@@ -1,7 +1,6 @@
 //
 //  ContactFromAddressBookManager.m
 //  JpushDemo
-//
 //  Created by 王树超 on 16/5/16.
 //  Copyright © 2016年 王树超. All rights reserved.
 //
@@ -53,16 +52,22 @@
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined)
     {
         //首次访问通讯录
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) { if (!error) { if (granted) {
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            if (!error) {
+            if (granted) {
             //允许 NSLog(@"已授权访问通讯录");
-            NSArray *contacts = [self fetchContactWithAddressBook:addressBook]; dispatch_async(dispatch_get_main_queue(), ^{
+            self.ContactArray = [self fetchContactWithAddressBook:addressBook];
+            dispatch_async(dispatch_get_main_queue(), ^{
                 //----------------主线程 更新 UI-----------------
-                NSLog(@"contacts:%@", contacts); }); }else{
+                NSLog(@"contacts:%@",self.ContactArray); }); }
+            else{
                     //拒绝
-                NSLog(@"拒绝访问通讯录"); } }else{ NSLog(@"发生错误!"); } }); }
+                NSLog(@"拒绝访问通讯录"); } }
+            else{
+                NSLog(@"发生错误!"); } }); }
     
     else{
-                        //非首次访问通讯录
+  //非首次访问通讯录
         self.ContactArray = [self fetchContactWithAddressBook:addressBook];
         dispatch_async(dispatch_get_main_queue(), ^{
                             //----------------主线程 更新 UI-----------------
@@ -71,9 +76,13 @@
                     }
 }
 - (NSMutableArray *)fetchContactWithAddressBook:(ABAddressBookRef)addressBook{
+    
+    //有权限访问
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
-        ////有权限访问 //获取联系人数组
-        NSArray *array = (__bridge NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook); NSMutableArray *contacts = [NSMutableArray array]; for (int i = 0; i < array.count; i++) {
+        //获取联系人数组
+        NSArray *array = (__bridge NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
+        NSMutableArray *contacts = [NSMutableArray array];
+        for (int i = 0; i < array.count; i++) {
             //获取联系人
             ABRecordRef people = CFArrayGetValueAtIndex((__bridge ABRecordRef)array, i);
             //获取联系人详细信息,如:姓名,电话,住址等信息
@@ -83,12 +92,12 @@
             NSString *phoneNumber = ((__bridge NSArray *)ABMultiValueCopyArrayOfAllValues(phoneNumRef)).lastObject;
             
             
+            //创建联系人对象，并添加数据
             Contact *contact = [[Contact alloc]init];
             contact.ContactName = [firstName stringByAppendingString:lastName];
             contact.ContactPhoneNumber = phoneNumber;
             [contacts addObject:contact];
             
-           // [contacts addObject:@{@"name": [firstName stringByAppendingString:lastName], @"phoneNumber": phoneNumber}];
         } return contacts;
     }else{
                 //无权限访问
@@ -113,7 +122,8 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         //----------------主线程 更新 UI-----------------
                         
-                        NSLog(@"contacts:%@", contacts); }); }else
+                        NSLog(@"contacts:%@", contacts); }); }
+                else
                         {
                             
                             //拒绝
@@ -145,8 +155,6 @@
                 NSLog(@"%@ ",givenName);
                 NSString *familyName = contact.familyName;
                 NSString *phoneNumber = ((CNPhoneNumber *)(contact.phoneNumbers.lastObject.value)).stringValue;
-                NSLog(@"%@ ",phoneNumber);
-                NSLog(@"%@ ",familyName);
 #warning 如果电话为空赋值一个符号防止崩溃
                 if (phoneNumber == NULL) {
                     phoneNumber = @"000";
@@ -157,7 +165,6 @@
                 contactModel.ContactPhoneNumber = phoneNumber;
                 [contacts addObject:contactModel];
                 
-               // [contacts addObject:@{@"name": [givenName stringByAppendingString:familyName], @"phoneNumber": phoneNumber}];
             }
             return contacts;
         }

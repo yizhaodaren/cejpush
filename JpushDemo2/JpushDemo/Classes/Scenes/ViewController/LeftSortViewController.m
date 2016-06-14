@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 
 //布局设置
-#define cellHight 40
+#define cellHight 60
 
 @interface LeftSortViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -25,12 +25,6 @@
     [super viewDidLoad];
     [self initUI];
     // Do any additional setup after loading the view.
-    
-
-    
-   
-    
-    
 }
 -(void)initUI{
     

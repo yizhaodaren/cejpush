@@ -21,6 +21,7 @@
 #import "JXWaitView.h"
 //本地存储的帮助类
 #import "FMDBManager.h"
+#import "ContactFromAddressBookManager.h"
 
 //masonry
 #import <Masonry.h>

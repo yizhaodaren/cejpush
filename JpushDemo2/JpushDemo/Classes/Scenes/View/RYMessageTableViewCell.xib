@@ -15,28 +15,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="548" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlN-tL-znl">
+                        <rect key="frame" x="422" y="30" width="40" height="40"/>
+                        <state key="normal" image="cell_msm.png"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBe-nP-dMp">
+                        <rect key="frame" x="362" y="30" width="40" height="40"/>
+                        <state key="normal" image="cell_telePhone.png"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O73-G5-FTZ">
+                        <rect key="frame" x="28" y="39.5" width="314" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP9-HS-qP8">
                         <rect key="frame" x="482" y="30" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="6YF-rd-A7L"/>
                             <constraint firstAttribute="height" constant="40" id="OuF-Ti-0wE"/>
                         </constraints>
-                        <state key="normal" image="zanwei.png"/>
+                        <state key="normal" image="cell_delete.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlN-tL-znl">
-                        <rect key="frame" x="422" y="30" width="40" height="40"/>
-                        <state key="normal" image="zanwei.png"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBe-nP-dMp">
-                        <rect key="frame" x="362" y="30" width="40" height="40"/>
-                        <state key="normal" image="zanwei.png"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O73-G5-FTZ">
-                        <rect key="frame" x="28" y="39.5" width="314" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="OBe-nP-dMp" firstAttribute="centerY" secondItem="hlN-tL-znl" secondAttribute="centerY" id="1Ef-x7-azL"/>
@@ -72,6 +72,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="zanwei.png" width="30" height="21"/>
+        <image name="cell_delete.png" width="72" height="72"/>
+        <image name="cell_msm.png" width="72" height="72"/>
+        <image name="cell_telePhone.png" width="72" height="72"/>
     </resources>
 </document>

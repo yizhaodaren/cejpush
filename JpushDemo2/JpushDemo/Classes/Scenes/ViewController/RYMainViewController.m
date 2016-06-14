@@ -37,7 +37,7 @@
 //        
 //        [invocation setTarget:[UIDevice currentDevice]];
 //        
-////        isFullScreen  = 2;
+//        isFullScreen  = 2;
 //        NSLog(@"-%d-",isFullScreen);
 //        
 //        [invocation setArgument:&isFullScreen atIndex:2];
