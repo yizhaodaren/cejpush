@@ -66,7 +66,7 @@
         make.height.equalTo(@45);
     }];
     self.tempView = [[UIView alloc]initWithFrame:CGRectMake(0, 42, k_ScreenWith/3, 3)];
-    self.tempView.backgroundColor = [UIColor redColor];
+    self.tempView.backgroundColor = [UIColor whiteColor];
     [self.segment addSubview: self.tempView];
 
 }

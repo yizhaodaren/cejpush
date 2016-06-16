@@ -40,10 +40,17 @@
     self.AccountLable = [[UILabel alloc]init];
     self.AccountLable.text = @"账号";
     
+    UIImageView *accountImage = [[UIImageView alloc]init];
+    accountImage.image  = [UIImage imageNamed:@""];
+    
+    
     //密码标签
     self.AccountLable.backgroundColor = [UIColor redColor];
     self.PasswordLable = [[UILabel alloc]init];
      self.PasswordLable.text = @"密码";
+    
+    
+    
     //账号输入框
     self.AccountTF = [[UITextField alloc]init];
     self.AccountTF.backgroundColor = [UIColor blackColor];

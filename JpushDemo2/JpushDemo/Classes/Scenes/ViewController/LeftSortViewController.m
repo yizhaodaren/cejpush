@@ -53,7 +53,7 @@
     }];
     
     
-    self.userImageView.image = [UIImage imageNamed:@"zanwei.png"];
+    self.userImageView.image = [UIImage imageNamed:@"user_image.png"];
 
     self.userImageView.layer.cornerRadius = 35;
     self.userImageView.clipsToBounds = YES;
@@ -194,34 +194,34 @@
     switch (indexPath.row) {
         case 0:
         {
-            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
-            cell.textLabel.text = @"手机号:783833";
+            cell.imageView.image = [UIImage imageNamed:@"user_phone"];
+            cell.textLabel.text = @"13153802083";
         }
             break;
         case 1:
         {
-            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.imageView.image = [UIImage imageNamed:@"user_email"];
             cell.textLabel.text = @"邮箱设置";
        
         }
             break;
         case 2:
         {
-            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.imageView.image = [UIImage imageNamed:@"user_share"];
             cell.textLabel.text = @"分享好友";
             
         }
             break;
         case 3:
         {
-            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.imageView.image = [UIImage imageNamed:@"user_opinion"];
             cell.textLabel.text = @"意见反馈";
             
                  }
             break;
         case 4:
         {
-            cell.imageView.image = [UIImage imageNamed:@"zanwei"];
+            cell.imageView.image = [UIImage imageNamed:@"user_aboutOur"];
             cell.textLabel.text = @"关于我们";
         
         }
