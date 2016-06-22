@@ -37,7 +37,6 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="16Z-0k-Xzx" secondAttribute="height" multiplier="1:1" id="yyI-eB-GaY"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="bg2ButtonDidClicked:" destination="-1" eventType="touchUpInside" id="6To-CE-ITh"/>
                     </connections>
@@ -48,7 +47,6 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="WmT-Wg-1dd" secondAttribute="height" multiplier="1:1" id="7nd-HW-5NI"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="bg4ButtonDidClicked:" destination="-1" eventType="touchUpInside" id="gUm-JV-KHH"/>
                     </connections>
@@ -59,7 +57,6 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="aTz-I2-wcG" secondAttribute="height" multiplier="1:1" id="CPS-Fb-jrW"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="bg3ButtonDidClicked:" destination="-1" eventType="touchUpInside" id="HZG-R7-8gF"/>
                     </connections>
@@ -84,7 +81,6 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Q8N-k7-qEO" secondAttribute="height" multiplier="1:1" id="nID-Yc-gQR"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="bg1ButtonDidClicked:" destination="-1" eventType="touchUpInside" id="Cxo-KM-tkY"/>
                     </connections>

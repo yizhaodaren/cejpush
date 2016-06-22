@@ -38,6 +38,10 @@
 
 }
 -(void)initUI{
+    
+    //预设置背景图片
+    [self setBackGroundImageForButtonExcept:0];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     //隐藏back按钮
     self.navigationItem.hidesBackButton = YES;
@@ -48,7 +52,7 @@
     title.textColor = [UIColor whiteColor];
     self.navigationItem.titleView = title;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"zanwei"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemDidClicked)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"setting_back"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemDidClicked)];
     
     
     //table设置
@@ -152,43 +156,47 @@
 }
 
 - (IBAction)bg1ButtonDidClicked:(id)sender {
-    
- [(UIButton *)sender setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+ 
+    [(UIButton *)sender setBackgroundImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
     
     [g_App.bgImgeView setImage:[UIImage imageNamed:@"h1.jpg"]];
+    
     [self setBackGroundImageForButtonExcept:1];
 }
 
 - (IBAction)bg2ButtonDidClicked:(id)sender {
-   [self.bg2Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    [(UIButton *)sender setBackgroundImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    
       [g_App.bgImgeView setImage:[UIImage imageNamed:@"h4.jpg"]];
     [self setBackGroundImageForButtonExcept:2];
 }
 
 - (IBAction)bg3ButtonDidClicked:(id)sender {
- [self.bg3Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
-        [g_App.bgImgeView setImage:[UIImage imageNamed:@"h2.jpg"]];
+ //[self.bg3Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+     [(UIButton *)sender setBackgroundImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    
+    [g_App.bgImgeView setImage:[UIImage imageNamed:@"h2.jpg"]];
     [self setBackGroundImageForButtonExcept:3];
 }
 
 - (IBAction)bg4ButtonDidClicked:(id)sender {
-     [self.bg4Button setImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
+    [(UIButton *)sender setBackgroundImage:[UIImage imageNamed:@"zanwei"] forState:UIControlStateNormal];
     [g_App.bgImgeView setImage:[UIImage imageNamed:@"h3.jpg"]];
     [self setBackGroundImageForButtonExcept:4];
 }
 
 -(void)setBackGroundImageForButtonExcept:(int)except{
     if (except != 1) {
-           [_bg1Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+           [_bg1Button setBackgroundImage:[UIImage imageNamed:@"h1.jpg"] forState:UIControlStateNormal];
     }
     if (except != 2) {
-        [_bg2Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+        [_bg2Button setBackgroundImage:[UIImage imageNamed:@"h2.jpg"] forState:UIControlStateNormal];
     }
     if (except != 3) {
-        [_bg3Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+        [_bg3Button setBackgroundImage:[UIImage imageNamed:@"h3.jpg"] forState:UIControlStateNormal];
     }
     if (except != 4) {
-        [_bg4Button setImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
+        [_bg4Button setBackgroundImage:[UIImage imageNamed:@"h4.jpg"] forState:UIControlStateNormal];
     }
  
 }
