@@ -17,10 +17,23 @@
 #import "LeftSlideViewController.h"
 #import "AppDelegate.h"
 @interface RYLoginViewController ()
-@property(nonatomic,strong)RYLoginView *rootView;
+@property (weak, nonatomic) IBOutlet UIView *RootView;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumbetTF;
 
-@property(nonatomic,copy)NSString *account;
-@property(nonatomic,copy)NSString *password;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *getVerificationcodeButton;
+
+
+- (IBAction)loginButtonAction:(id)sender;
+
+- (IBAction)getVerificationcodeButtonAtion:(id)sender;
+
+
+//@property(nonatomic,strong)RYLoginView *rootView;
+//
+//@property(nonatomic,copy)NSString *account;
+//@property(nonatomic,copy)NSString *password;
 @end
 
 @implementation RYLoginViewController
@@ -31,13 +44,29 @@
 //    /[JPUSHService]
     [self initUI];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    
+}
+-(void)keyboardWillShow:(NSNotification *)notification{
+    static CGFloat normalKeyboardHeight = 216.0f;
+    NSDictionary *info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    CGFloat distancetomove = kbSize.height;
+    NSLog(@"%f",distancetomove);
 }
 -(void)initUI{
-    self.rootView = [[RYLoginView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.rootView.loginButton addTarget:self action:@selector(login)forControlEvents:UIControlEventTouchUpInside];
-    [self.rootView.presentButton addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
-                                                          
-    self.view = self.rootView;
+
+    //设置背景透明
+    [self.RootView setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.3]];
+    self.RootView.layer.cornerRadius = 5;
+    self.RootView.clipsToBounds = YES;
+    
+    
+//    self.rootView = [[RYLoginView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    [self.rootView.loginButton addTarget:self action:@selector(login)forControlEvents:UIControlEventTouchUpInside];
+//    [self.rootView.presentButton addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
+//                                                          
+//    self.view = self.rootView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,4 +136,14 @@
 
 
 
+- (IBAction)loginButtonAction:(id)sender {
+    
+    //获取抽屉并模态过去
+    [self presentViewController:g_App.leftSlideVC animated:YES completion:^{
+        ;
+    }];
+}
+
+- (IBAction)getVerificationcodeButtonAtion:(id)sender {
+}
 @end

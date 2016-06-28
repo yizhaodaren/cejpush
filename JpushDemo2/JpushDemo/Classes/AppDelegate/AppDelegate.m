@@ -124,28 +124,28 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         self.window.rootViewController = self.leftSlideVC;
     }else{
         NSLog(@"不错在用户");
-        RYMainViewController *vc = [[RYMainViewController alloc]init];
-        vc.view.backgroundColor = [UIColor whiteColor];
+//        RYMainViewController *vc = [[RYMainViewController alloc]init];
+//        vc.view.backgroundColor = [UIColor whiteColor];
         //登录界面
-      //  RYLoginViewController *vc = [[RYLoginViewController alloc]init];
+       RYLoginViewController *vc = [[RYLoginViewController alloc]init];
         self.window.rootViewController = vc;
         
         
       //启动后的一个动画
-        CGFloat  mScreenWidth = [UIScreen mainScreen].bounds.size.width;
-        CGFloat  mScreenHeight= [UIScreen mainScreen].bounds.size.height;
-        UIImageView *splashView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, mScreenHeight)];
-        //将图片添加到UIImageView对象中
-        splashView.image=[UIImage imageNamed:@"zanwei"];
-        [self.window addSubview:splashView];
-        [self.window bringSubviewToFront:splashView];
-        //设置动画效果
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:6.0];
-        [UIView setAnimationDelegate:self];
-        splashView.alpha=0.0;
-        splashView.frame=CGRectMake(-60, -90, 440, 700);
-        [UIView commitAnimations];
+//        CGFloat  mScreenWidth = [UIScreen mainScreen].bounds.size.width;
+//        CGFloat  mScreenHeight= [UIScreen mainScreen].bounds.size.height;
+//        UIImageView *splashView=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, mScreenHeight)];
+//        //将图片添加到UIImageView对象中
+//        splashView.image=[UIImage imageNamed:@"zanwei"];
+//        [self.window addSubview:splashView];
+//        [self.window bringSubviewToFront:splashView];
+//        //设置动画效果
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:6.0];
+//        [UIView setAnimationDelegate:self];
+//        splashView.alpha=0.0;
+//        splashView.frame=CGRectMake(-60, -90, 440, 700);
+//        [UIView commitAnimations];
 
     }
     

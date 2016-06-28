@@ -58,6 +58,7 @@
 		246F3E9D1D0EAD5500BBF6C4 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 246F3E9B1D0EAD5500BBF6C4 /* menu@3x.png */; };
 		248345B71CFE800A0027C50B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248345B61CFE800A0027C50B /* AppDelegate.m */; };
 		2485E7F21CDB53BF0010A15A /* jpush-ios-2.1.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2485E7F01CDB53BF0010A15A /* jpush-ios-2.1.6.a */; };
+		248EC7111D20C2C100EDEA2F /* RYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248EC7101D20C2C100EDEA2F /* RYLoginViewController.xib */; };
 		249F1FBA1D19159B00B7525C /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249F1F981D19159B00B7525C /* ShareSDK.framework */; };
 		249F1FBB1D19159B00B7525C /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249F1F9B1D19159B00B7525C /* ShareSDKExtension.framework */; };
 		249F1FBC1D19159B00B7525C /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 249F1F9C1D19159B00B7525C /* ShareSDKUI.bundle */; };
@@ -193,6 +194,7 @@
 		248345BA1CFE80B10027C50B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2485E7F01CDB53BF0010A15A /* jpush-ios-2.1.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.6.a"; sourceTree = "<group>"; };
 		2485E7F11CDB53BF0010A15A /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		248EC7101D20C2C100EDEA2F /* RYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYLoginViewController.xib; sourceTree = "<group>"; };
 		249F1F981D19159B00B7525C /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		249F1F9B1D19159B00B7525C /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		249F1F9C1D19159B00B7525C /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			children = (
 				240B5B2C1CE2E1190076B621 /* RYLoginViewController.h */,
 				240B5B2D1CE2E1190076B621 /* RYLoginViewController.m */,
+				248EC7101D20C2C100EDEA2F /* RYLoginViewController.xib */,
 				240B5B321CE2E1710076B621 /* RYRegisterViewController.h */,
 				240B5B331CE2E1710076B621 /* RYRegisterViewController.m */,
 			);
@@ -927,6 +930,7 @@
 				24C178D71CE9E01400010D38 /* alertView-bg@2x.png in Resources */,
 				242AFE9A1D0FE41A0096A3DA /* user_opinion@3x.png in Resources */,
 				246F3E9C1D0EAD5500BBF6C4 /* menu@2x.png in Resources */,
+				248EC7111D20C2C100EDEA2F /* RYLoginViewController.xib in Resources */,
 				240B5B201CE2D0490076B621 /* image2.png in Resources */,
 				242AFE9B1D0FE41A0096A3DA /* user_share@3x.png in Resources */,
 				246F3E981D0EA37900BBF6C4 /* cell_msm.png in Resources */,

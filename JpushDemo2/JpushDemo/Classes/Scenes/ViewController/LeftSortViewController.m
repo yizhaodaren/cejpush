@@ -18,10 +18,21 @@
 #define cellHight 60
 
 @interface LeftSortViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+@property(nonatomic,strong)UITableView *table;
+@property(nonatomic,strong)UIView *cellBackgroundView;
 @end
 
 @implementation LeftSortViewController
+
+#pragma mark 懒加载
+-(UIView *)cellBackgroundView{
+    if (_cellBackgroundView == nil) {
+        _cellBackgroundView = [[UIView alloc]init];
+        //这里控制了cell的选中状态的颜色
+        _cellBackgroundView.backgroundColor = [UIColor grayColor];
+    }
+    return _cellBackgroundView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,12 +41,12 @@
 }
 -(void)initUI{
     
-    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, k_ScreenWith - 100, k_ScreenHeight) style:UITableViewStylePlain];
+   self.table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, k_ScreenWith - 100, k_ScreenHeight) style:UITableViewStylePlain];
     /**
      *设置代理
      */
-    table.delegate = self;
-    table.dataSource = self;
+    self.table.delegate = self;
+    self.table.dataSource = self;
    
     /**
      *头视图
@@ -72,7 +83,7 @@
     }];
     
     
-    table.tableHeaderView = headerView;
+    self.table.tableHeaderView = headerView;
     
     /**
      *尾视图
@@ -80,13 +91,13 @@
     UIView *footerView= [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, k_ScreenHeight - 100 - 5 * cellHight)];
     footerView.backgroundColor = [UIColor blackColor];
     
-    table.tableFooterView = footerView;
+    self.table.tableFooterView = footerView;
  
-    table.separatorColor = [UIColor redColor];
+    self.table.separatorColor = [UIColor whiteColor];
     
-    //table.separatorInset = UIEdgeInsetsMake(0,80, 0, 80); // 设置端距，这里表示separator离左边和右边均80像素
-    table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    [self.view addSubview:table];
+    self.table.separatorInset = UIEdgeInsetsMake(0,0,0,0); // 设置端距，这里表示separator离左边和右边均80像素
+    self.table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    [self.view addSubview:self.table];
     
 
     
@@ -128,13 +139,20 @@
     return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ff"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ff"];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
         
     }
+
+  
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell选中时候的颜色
+    cell.selectedBackgroundView = self.cellBackgroundView;
+    
+    
+    
+    
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     [self handelCell:cell withIndexPath:indexPath];
@@ -142,6 +160,10 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
+    
     switch (indexPath.row) {
         case 0:
             
