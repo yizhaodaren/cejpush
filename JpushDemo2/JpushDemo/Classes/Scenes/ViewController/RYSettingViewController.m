@@ -31,7 +31,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self initUI];
-    
     //设置代理
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
@@ -71,7 +70,7 @@
 }
 #pragma mark table代理方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return 2;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"flag"];

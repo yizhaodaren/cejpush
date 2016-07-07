@@ -122,8 +122,8 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="MZq-wJ-wZc"/>
-                            <exclude reference="G3D-FP-b3r"/>
                             <exclude reference="fnB-ww-M8n"/>
+                            <exclude reference="G3D-FP-b3r"/>
                             <exclude reference="ICC-KK-Xmr"/>
                             <exclude reference="kIu-69-EGO"/>
                             <exclude reference="a2c-rt-ihQ"/>

@@ -7,7 +7,7 @@
 //
 
 #import "mainView.h"
-
+#import "instructionView.h"
 @implementation mainView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -19,6 +19,7 @@
     [self createTable];
     [self createCollectionView];
     [self createWebView];
+    [self createintroctionView];
     }
     return self;
 }
@@ -143,12 +144,38 @@
     [self.mainScrollView addSubview:self.mainCollectionView];
 
     
+    
 //    self.mainCollectionView = [UICollectionView ]
 }
 -(void)createWebView{
-    self.mainWebView = [[UIWebView alloc]initWithFrame:CGRectMake(k_ScreenWith *2, 0, k_ScreenWith, k_ScreenHeight - 64 -45)];
-    self.mainWebView.backgroundColor = [UIColor whiteColor];
-    [self.mainScrollView addSubview:self.mainWebView];
+//    self.mainWebView = [[UIWebView alloc]initWithFrame:CGRectMake(k_ScreenWith *2, 0, k_ScreenWith, k_ScreenHeight - 64 -45)];
+//    self.mainWebView.backgroundColor = [UIColor whiteColor];
+//    [self.mainScrollView addSubview:self.mainWebView];
+}
+//创建说明view
+-(void)createintroctionView{
+ // self.instructionView = [[instructionView alloc]initWithFrame:CGRectMake(k_ScreenWith *2, 0, k_ScreenWith, k_ScreenHeight - 64 -45)];
+    
+   // self.instructionView = [[[NSBundle mainBundle]loadNibNamed:@"instructionView" owner:nil options:nil] firstObject];
+    instructionView *view1 = [[[NSBundle mainBundle]loadNibNamed:@"instructionView" owner:nil options:nil] firstObject];
+//   self.instructionView.mybutton.titleLabel.numberOfLines = 0;
+//    
+//    //居左设置
+//    self.instructionView.mybutton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    
+//    self.instructionView.mybutton.titleLabel.backgroundColor = [UIColor grayColor];
+//    [self.instructionView.mybutton setTitle:@"instructionView" forState:UIControlStateNormal];
+//    CGRect frame = self.instructionView.mybutton.titleLabel.bounds;
+//  NSLog(@"%lf",frame.size.height);
+//    self.instructionView.mybuttonHeight.constant = frame.size.height;
+    
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(k_ScreenWith *2, 0, k_ScreenWith, k_ScreenHeight-100)];
+    view.backgroundColor = [UIColor redColor];
+
+    view1.frame = CGRectMake(0, 0,k_ScreenWith,k_ScreenHeight -100);
+    [view addSubview:view1];
+      [self.mainScrollView addSubview:view];
 }
 
 @end

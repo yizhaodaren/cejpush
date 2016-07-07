@@ -36,8 +36,8 @@
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
-
-
+//控制键盘挡住输入框的
+#import <IQKeyboardManager.h>
 @interface AppDelegate ()
 
 @end
@@ -45,6 +45,15 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+#pragma mark 键盘挡住输入框
+    
+    //开启使用
+    [IQKeyboardManager sharedManager].enable = YES;
+    //不使用工具栏
+   [[IQKeyboardManager sharedManager]setEnableAutoToolbar:NO];
+    //点击空白回收键盘
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
 
 #pragma mark 状态栏操作

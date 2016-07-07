@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="instructionView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IP-TV-GE7">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-lX-EcC">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-HB-VQA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="sLk-HB-VQA" secondAttribute="trailing" id="2YH-VG-IpS"/>
+                                <constraint firstItem="sLk-HB-VQA" firstAttribute="top" secondItem="PI3-lX-EcC" secondAttribute="top" id="TjE-XT-0Fg"/>
+                                <constraint firstItem="sLk-HB-VQA" firstAttribute="leading" secondItem="PI3-lX-EcC" secondAttribute="leading" id="Y1Y-2F-bcb"/>
+                                <constraint firstAttribute="height" constant="800" id="qnb-3U-fy3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PI3-lX-EcC" secondAttribute="trailing" id="UpH-m2-Df5"/>
+                        <constraint firstItem="PI3-lX-EcC" firstAttribute="centerX" secondItem="3IP-TV-GE7" secondAttribute="centerX" id="WQe-0x-C6b"/>
+                        <constraint firstAttribute="bottom" secondItem="PI3-lX-EcC" secondAttribute="bottom" id="dw9-qk-rbl"/>
+                        <constraint firstItem="PI3-lX-EcC" firstAttribute="leading" secondItem="3IP-TV-GE7" secondAttribute="leading" id="eOe-vf-uQs"/>
+                        <constraint firstItem="PI3-lX-EcC" firstAttribute="top" secondItem="3IP-TV-GE7" secondAttribute="top" id="grE-aw-CXH"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3IP-TV-GE7" secondAttribute="bottom" id="TNL-wz-HsE"/>
+                <constraint firstItem="3IP-TV-GE7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gWk-E6-ezH"/>
+                <constraint firstAttribute="trailing" secondItem="3IP-TV-GE7" secondAttribute="trailing" id="qPb-KH-LOV"/>
+                <constraint firstItem="3IP-TV-GE7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wm5-Qx-4Af"/>
+            </constraints>
+            <point key="canvasLocation" x="256" y="249"/>
+        </view>
+    </objects>
+</document>

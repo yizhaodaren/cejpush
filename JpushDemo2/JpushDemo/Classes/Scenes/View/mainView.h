@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class instructionView;
+
 @interface mainView : UIView
 @property(nonatomic,strong)UISegmentedControl *segment;
 @property(nonatomic,strong)UIScrollView *mainScrollView;
@@ -17,6 +19,9 @@
 @property(nonatomic,strong)UICollectionView *mainCollectionView;
 //webView
 @property(nonatomic,strong)UIWebView *mainWebView;
+
+//说明的页面
+@property(nonatomic)instructionView *instructionView;
 
 //tempView;
 @property(nonatomic,strong)UIView *tempView;

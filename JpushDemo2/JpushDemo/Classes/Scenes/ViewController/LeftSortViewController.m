@@ -10,12 +10,14 @@
 
 #import "RYOpinionViewController.h"
 #import "RYAboutOurViewController.h"
+#import "RYEmailViewController.h"
 #import "AppDelegate.h"
 //分享
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 //布局设置
 #define cellHight 60
+
 
 @interface LeftSortViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *table;
@@ -169,8 +171,18 @@
             
             break;
         case 1:
+        {
+            /**
+             *邮箱设置
+             */
+            //关闭抽屉
+            [g_App.leftSlideVC closeLeftView];
+            RYEmailViewController *vc = [[RYEmailViewController alloc]initWithNibName:@"RYEmailViewController" bundle:nil];
+            
+            [(UINavigationController *)g_App.leftSlideVC.mainVC pushViewController:vc animated:YES];
             
             break;
+        }
         case 2:
         {
             

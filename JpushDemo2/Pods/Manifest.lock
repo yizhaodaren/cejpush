@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.6):
     - FMDB/standard (= 2.6)
   - FMDB/standard (2.6)
+  - IQKeyboardManager (4.0.3)
   - Masonry (0.6.4)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.6):
@@ -26,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - IQKeyboardManager
   - Masonry
   - MJRefresh
   - SDWebImage
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
+  IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9

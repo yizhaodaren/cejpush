@@ -18,6 +18,8 @@
 		240B5B371CE2E1900076B621 /* RYRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 240B5B361CE2E1900076B621 /* RYRegisterView.m */; };
 		240B5B3F1CE312AE0076B621 /* WSCAFNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 240B5B3E1CE312AE0076B621 /* WSCAFNManager.m */; };
 		240B5B461CE3382E0076B621 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 240B5B451CE3382E0076B621 /* UIView+Extension.m */; };
+		24126F421D260DD7009516D2 /* RYEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24126F401D260DD7009516D2 /* RYEmailViewController.m */; };
+		24126F431D260DD7009516D2 /* RYEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24126F411D260DD7009516D2 /* RYEmailViewController.xib */; };
 		2416C3B81CE8AB3D00419FBB /* RYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2416C3B71CE8AB3D00419FBB /* RYSettingViewController.m */; };
 		241CF6E71CE96E5100D4251B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 241CF6E21CE96E5100D4251B /* libWeChatSDK.a */; };
 		241CF6E81CE96E5100D4251B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 241CF6E31CE96E5100D4251B /* README.txt */; };
@@ -92,6 +94,8 @@
 		24A6521E1CDAE1FE00835E2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A6521D1CDAE1FE00835E2B /* UIKit.framework */; };
 		24A652201CDAE20A00835E2B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A6521F1CDAE20A00835E2B /* Security.framework */; };
 		24A652221CDAE22000835E2B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A652211CDAE22000835E2B /* libz.tbd */; };
+		24AC1F621D23D304003E30F0 /* instructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC1F611D23D304003E30F0 /* instructionView.xib */; };
+		24AC1F651D23D3EC003E30F0 /* instructionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AC1F641D23D3EC003E30F0 /* instructionView.m */; };
 		24ACA75F1CF29FB2008F0C78 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ACA75E1CF29FB2008F0C78 /* FMDBManager.m */; };
 		24B62A9F1D0129130095EE7D /* RYOpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B62A9D1D0129130095EE7D /* RYOpinionViewController.m */; };
 		24B62AA01D0129130095EE7D /* RYOpinionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B62A9E1D0129130095EE7D /* RYOpinionViewController.xib */; };
@@ -133,6 +137,9 @@
 		240B5B3E1CE312AE0076B621 /* WSCAFNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCAFNManager.m; sourceTree = "<group>"; };
 		240B5B441CE3382E0076B621 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		240B5B451CE3382E0076B621 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		24126F3F1D260DD7009516D2 /* RYEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYEmailViewController.h; sourceTree = "<group>"; };
+		24126F401D260DD7009516D2 /* RYEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYEmailViewController.m; sourceTree = "<group>"; };
+		24126F411D260DD7009516D2 /* RYEmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RYEmailViewController.xib; sourceTree = "<group>"; };
 		2416C3B61CE8AB3D00419FBB /* RYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYSettingViewController.h; sourceTree = "<group>"; };
 		2416C3B71CE8AB3D00419FBB /* RYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYSettingViewController.m; sourceTree = "<group>"; };
 		241CF6E21CE96E5100D4251B /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -245,6 +252,9 @@
 		24A6521D1CDAE1FE00835E2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24A6521F1CDAE20A00835E2B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		24A652211CDAE22000835E2B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		24AC1F611D23D304003E30F0 /* instructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = instructionView.xib; sourceTree = "<group>"; };
+		24AC1F631D23D3EC003E30F0 /* instructionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instructionView.h; sourceTree = "<group>"; };
+		24AC1F641D23D3EC003E30F0 /* instructionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = instructionView.m; sourceTree = "<group>"; };
 		24ACA75D1CF29FB2008F0C78 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		24ACA75E1CF29FB2008F0C78 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		24B62A9C1D0129130095EE7D /* RYOpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYOpinionViewController.h; sourceTree = "<group>"; };
@@ -344,6 +354,16 @@
 				240B5B451CE3382E0076B621 /* UIView+Extension.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		24126F3E1D260D9A009516D2 /* 邮箱设置 */ = {
+			isa = PBXGroup;
+			children = (
+				24126F3F1D260DD7009516D2 /* RYEmailViewController.h */,
+				24126F401D260DD7009516D2 /* RYEmailViewController.m */,
+				24126F411D260DD7009516D2 /* RYEmailViewController.xib */,
+			);
+			name = "邮箱设置";
 			sourceTree = "<group>";
 		};
 		241CF6E11CE96E5100D4251B /* 微信支付OpenSDK1.7 */ = {
@@ -792,6 +812,9 @@
 				240B5B361CE2E1900076B621 /* RYRegisterView.m */,
 				24C536C51CE430EE00BDA3B5 /* mainView.h */,
 				24C536C61CE430EE00BDA3B5 /* mainView.m */,
+				24AC1F631D23D3EC003E30F0 /* instructionView.h */,
+				24AC1F641D23D3EC003E30F0 /* instructionView.m */,
+				24AC1F611D23D304003E30F0 /* instructionView.xib */,
 				24E52DCB1D004BC800918597 /* RYMessageTableViewCell.h */,
 				24E52DCC1D004BC800918597 /* RYMessageTableViewCell.m */,
 				24E52DCD1D004BC800918597 /* RYMessageTableViewCell.xib */,
@@ -802,6 +825,7 @@
 		24E45F3D1CDC9F33006CD401 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				24126F3E1D260D9A009516D2 /* 邮箱设置 */,
 				242C08E61D0D425D007E41BA /* 设置 */,
 				24B62AA11D01292A0095EE7D /* 关于我们 */,
 				24B62A9B1D0128F30095EE7D /* 意见反馈 */,
@@ -924,6 +948,7 @@
 				2468D4EB1CF43B2B00280B78 /* image1.png in Resources */,
 				24281E821CFEE65D00ECA77C /* 005.jpg in Resources */,
 				242AFE981D0FE41A0096A3DA /* user_email@3x.png in Resources */,
+				24AC1F621D23D304003E30F0 /* instructionView.xib in Resources */,
 				249F1FC11D19159B00B7525C /* WeiboSDK.bundle in Resources */,
 				241CF6E81CE96E5100D4251B /* README.txt in Resources */,
 				249F1FC31D19159B00B7525C /* README.txt in Resources */,
@@ -946,6 +971,7 @@
 				24C5236C1D12428F0072F49A /* setting_back@3x.png in Resources */,
 				242AFE901D0FA3680096A3DA /* h4.jpg in Resources */,
 				240B5B211CE2D0490076B621 /* image3.png in Resources */,
+				24126F431D260DD7009516D2 /* RYEmailViewController.xib in Resources */,
 				246F3E9D1D0EAD5500BBF6C4 /* menu@3x.png in Resources */,
 				242AFE8D1D0FA3680096A3DA /* h1.jpg in Resources */,
 				24A652011CDADE5E00835E2B /* Main.storyboard in Resources */,
@@ -1012,6 +1038,7 @@
 				242F26D51CDCAE2E00534B11 /* User.m in Sources */,
 				248345B71CFE800A0027C50B /* AppDelegate.m in Sources */,
 				240B5B3F1CE312AE0076B621 /* WSCAFNManager.m in Sources */,
+				24AC1F651D23D3EC003E30F0 /* instructionView.m in Sources */,
 				24C536C71CE430EE00BDA3B5 /* mainView.m in Sources */,
 				240B5B281CE2D24C0076B621 /* LeftSlideViewController.m in Sources */,
 				24E52DCE1D004BC800918597 /* RYMessageTableViewCell.m in Sources */,
@@ -1028,6 +1055,7 @@
 				24473C4E1CFEE02D00F22EBA /* TAPageControl.m in Sources */,
 				24473C4F1CFEE02D00F22EBA /* SDCollectionViewCell.m in Sources */,
 				242F26D81CDCB58900534B11 /* RYMainViewController.m in Sources */,
+				24126F421D260DD7009516D2 /* RYEmailViewController.m in Sources */,
 				24C536C41CE42E8F00BDA3B5 /* MainViewController.m in Sources */,
 				240B5B311CE2E13F0076B621 /* RYLoginView.m in Sources */,
 				24473C4B1CFEE02D00F22EBA /* TAAbstractDotView.m in Sources */,

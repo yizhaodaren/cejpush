@@ -31,6 +31,9 @@
     [super viewDidLoad];
     
     
+    
+
+    
     //注册通知JPUSH通知
     [self registerNOtification];
     
